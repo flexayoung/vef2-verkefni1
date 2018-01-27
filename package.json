@@ -1,0 +1,29 @@
+{
+  "name": "vef2-2018-v1",
+  "version": "1.0.0",
+  "description": "Vefforritun: Verkefni 1",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vefforritun/vef2-2018-v1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vefforritun/vef2-2018-v1/issues"
+  },
+  "homepage": "https://github.com/vefforritun/vef2-2018-v1#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "front-matter": "^2.3.0",
+    "marked": "^0.3.12"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}

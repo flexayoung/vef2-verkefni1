@@ -10,3 +10,19 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+body {
+  color: #333;
+}
+
+.header {
+  background-image: url("header.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+}
+
+.section__main {
+  font-family: 'Lato';
+  background-color: #eee;
+}
