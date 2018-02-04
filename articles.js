@@ -42,7 +42,10 @@ function getArticleFromSlug(slug, arr, next) {
 }
 
 function getTitleAndMarkdown(article) {
-  return [article.attributes.title, marked(article.body)];
+  if (article) {
+    return [article.attributes.title, marked(article.body)];
+  }
+  return undefined;
 }
 
 /* ASYNC FUNCTIONS */
@@ -82,15 +85,11 @@ router.get('/:slug', (req, res, next) => {
   if (req.params.slug !== 'favicon.ico') {
     getContent()
       .then(data => getArticleFromSlug(req.params.slug, data, next))
-      .then(data => {
-        console.log("THIS IS SLUG renderer")
-
-        getTitleAndMarkdown(data)
+      .then(data => getTitleAndMarkdown(data))
+      .then((data) => {
+        if (data) res.render('pages/article', { title: data[0], data: data[1] });
       })
-      .then(data => res.render('pages/article', { title: data[0], data: data[1] }))
-      .catch(err => {
-        console.error(err)}
-      );
+      .catch(err => console.error(err));
   }
 });
 
