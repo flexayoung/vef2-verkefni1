@@ -1,28 +1,134 @@
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 html {
   box-sizing: border-box;
+  font-size: 62.5%;
 }
 
-*, *:before, *:after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
 body {
+  font-family: Lora, serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.7;
   color: #333;
+  background-color: #eee;
+}
+
+main {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: Roboto, sans-serif;
+  font-size: 3.6rem;
 }
 
 .header {
-  background-image: url("header.jpg");
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  width: 100%;
   height: 50vh;
+  background-image: url("header.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.header__heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 4.8rem;
+  color: #eee;
+  transform: translate(-50%, -50%);
 }
 
 .section__main {
-  font-family: 'Lato';
-  background-color: #eee;
+  display: flex;
+  padding-top: 3rem;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 45rem;
+  height: 40rem;
+  margin: 30px 0;
+}
+
+.card__img-container {
+  width: 100%;
+  height: 75%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #666;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+}
+
+.card__link,
+.card_link:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+.card__title {
+  font-family: Roboto, sans-serif;
+  font-size: 2.4rem;
+}
+
+.section__article {
+  padding: 1.5rem;
+}
+
+.section__article h2 {
+  font-family: Robot, sans-serif;
+  font-size: 2.4rem;
+}
+
+.section__article img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section__article p {
+  padding: 1.5rem 0;
+}
+
+.section__article blockquote {
+  font-style: italic;
+}
+
+.link,
+.link:visited {
+  font-weight: 700;
+  color: #333;
+  text-decoration: none;
+}
+
+.error__heading {
+  padding: 3rem 0;
+  font-family: inherit;
+  font-size: 4.8rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.section__error .link {
+  display: block;
+  text-align: center;
 }

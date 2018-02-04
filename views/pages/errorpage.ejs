@@ -1,4 +1,4 @@
-<!-- views/pages/article.ejs -->
+<!-- views/pages/errorpage.ejs -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,21 +6,13 @@
   <% include ../partials/head %>
 </head>
 <body class="container">
-
-
 <% include ../partials/header %>
 
 <main>
-  <section class="section__article">
-    <% if(data) {%>
-      <%- data %>
-      <% } else if(err) { %>
-        <h1>Ó nei, efnið finnst ekki!</h1>
-        <% } %>
-
+  <section class="section__error">
+    <h1 class="error__heading"><%= data %></h1>
     <a class="link" href="/">Til baka</a>
   </section>
-
 </main>
 
 <footer>

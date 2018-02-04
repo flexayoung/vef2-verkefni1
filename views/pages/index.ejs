@@ -1,26 +1,40 @@
 <!-- views/pages/index.ejs -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <% include ../partials/head %>
 </head>
+
 <body class="container">
 
 
-<% include ../partials/header %>
+  <% include ../partials/header %>
 
-<main>
-  <section class="section__main">
-    <div class="card">
-      <h3 class="card__title"><% title %></h3>
-      <p class="card__date"><% date %></p>
-    </div>
-  </section>
-</main>
+    <main>
+      <section class="section__main">
+        <% for(let i = 0; i < data.length; i ++) { %>
+          <div class="card">
+            <div class="card__img-container">
+              <% if(data[i].attributes.image) { %>
 
-<footer>
-    <% include ../partials/footer %>
-</footer>
+                <img src='<%= data[i].attributes.image %>' class="card__img">
+                <% } %>
+
+            </div>
+            <a href='<%= data[i].attributes.slug %>' class="card__link">
+              <h3 class="card__title"> <%= data[i].attributes.title %> </h3>
+            </a>
+            <span class="card__date"><%= data[i].attributes.date %></span>
+          </div>
+          <% } %>
+      </section>
+    </main>
+
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
 
 </body>
+
 </html>
