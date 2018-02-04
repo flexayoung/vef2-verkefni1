@@ -100,8 +100,9 @@ router.use((req, res) => {
   res.render('pages/errorpage', { title: 'Fannst ekki', data: 'Ó nei, síðan fannst ekki' });
 });
 
-// Handle 500
-router.use((error, req, res) => {
+/* eslint-disable */
+router.use((error, req, res, next) => {
+  /* eslint-enable */
   res.status(500);
   res.render('pages, errorpage', { title: 'Villa kom upp', data: '' });
 });
